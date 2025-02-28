@@ -1,0 +1,10 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-poc-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/whitelist-source-range: "1.2.3.4/32,5.6.7.8/32"
+
+
+// Does our ingress allow this?
