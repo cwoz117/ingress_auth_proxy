@@ -20,7 +20,7 @@ kubectl annotate ingress my-ingress -n my-namespace \
   argocd.argoproj.io/compare-options="IgnoreExtraneous"
 ```
 
-### OR we can ignore specific line-items:
+#### OR we can ignore specific line-items:
 
 Argo manifest updates tho
 ```
@@ -41,3 +41,6 @@ spec:
 IP Whitelists can exist at the ingress level, but the loadbalancer service needs to be opened up (Security concerns?)
 
 so-called global IP's (office cidr range for ex) can exist in a config map and be pulled with any additional ip's added for clients
+
+## 5. Pulling whitelist out of fleet management (config map)
+If we can pull the whitelist out to a value we have control over we can make modifications on the fly
