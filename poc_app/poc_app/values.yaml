@@ -1,0 +1,19 @@
+replicaCount: 1
+
+image:
+  repository: myrepo/main-app
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  host: app.example.com
+  path: /
+  annotations:
+    nginx.ingress.kubernetes.io/auth-url: "http://auth-service.default.svc.cluster.local/auth/validate"
+    nginx.ingress.kubernetes.io/auth-signin: "http://auth.example.com/login"
+
